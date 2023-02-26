@@ -3,21 +3,30 @@ import numpy as np
 
 class Sudoku:
 
-    def __init__(self):
+    def __init__(self, board=None):
         #initiates a 9x9 board
         self._board = [[0 for i in range(9)] for i in range(9)]
+        self._solved = [[0 for i in range(9)] for i in range(9)]
+        if board != None:
+            for i in range(9):
+                for j in range(9):
+                    self._board[i][j] = board[i][j]
 
     def __str__(self):
         _printBoard = np.matrix(self._board)
         return f"{_printBoard}"
 
-    def newBoard(self):
+    
+    #generating a new sudoku puzzle is extremely long using my current algo. i will abandon this for now... need more efficient algo..
+    def __newBoard(self):
         #base case -> board filled completely
         #recursive -> board not filled
-        for number in range(1,2):
+        self._board = [[0 for i in range(9)] for i in range(9)]
+        for number in range(1,5):
             self.insertNumber(number)
 
         self.solve()
+        self.copyBoard(self._solved, self._board)
         #backtrack algo
 
     #To insert a number(1-9) into board
@@ -63,11 +72,13 @@ class Sudoku:
         return randomList
 
     #Output: Returns True if number in row
+    #Converting list to set will improve efficiency, Reference: https://wiki.python.org/moin/TimeComplexity
+    #but seem to be the same as changing from list to set item also takes O(1) lol
     def checkRow(self, number, row):
-        if number in self._board[row]:
-            return True
-        else:
-            return False
+        for i in range(9):
+            if self._board[row][i] == number:
+                return True
+        return False
 
     #Output: Returns True if number in column
     def checkCol(self, number, col):
@@ -86,30 +97,43 @@ class Sudoku:
                     return True
         return False
 
-    def possible(self, number, row, col):
+    #Output: Returns True if number is valid in square
+    def isValid(self, number, row, col):
         if not (self.checkRow(number, row)):
             if not (self.checkCol(number, col)):
                 if not (self.checkBox(number, row, col)):
                     return True
         return False
 
+    def copyBoard(self, copy, paste):
+        for i in range(9):
+            for j in range(9):
+                paste[i][j] = copy[i][j]
     
     #backtracking algo
     #Reference: https://www.youtube.com/watch?v=G_UYXzGuqvM&ab_channel=Computerphile
+    #Reference: https://www.geeksforgeeks.org/backtracking-algorithms/
     #base case -> board completely filled
     #recursive -> board not completely filled
     def solve(self):
+        count = 0
         for row in range(9):
             for col in range(9):
+                print(self)
                 if self._board[row][col] == 0:
                     for number in range(1,10):
-                        if self.possible(number, row, col):
+                        if self.isValid(number, row, col):
                             self._board[row][col] = number
                             self.solve()
                             self._board[row][col] = 0
                     return
-
-
+                else:
+                    count += 1
+        if count == 81:
+            self.copyBoard(self._board, self._solved)
+            print(self)
+                    
+                    
     
 
     
