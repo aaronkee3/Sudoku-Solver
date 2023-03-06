@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+<form class="content" name="submit" action="/solveSudoku" method="POST">
+    <div id="sudoku-container">
+    
+
+            <div class="row">
+
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ s1 }}>
+                <input class="square" name="s2" type="text" maxlength="1" readonly value={{ s2 }}>
+                <input class="square right" name="s3" type="text" maxlength="1" readonly value={{ s3 }}>
+                <input class="square" name="s4" type="text" maxlength="1" readonly value={{ s4 }}>
+                <input class="square" name="s5" type="text" maxlength="1" readonly value={{ s5 }}>
+                <input class="square right" name="s6" type="text" maxlength="1"  readonly value={{ s6 }}>
+                <input class="square" name="s7" type="text" maxlength="1"  readonly value={{ s7 }}>
+                <input class="square" name="s8" type="text" maxlength="1"  readonly value={{ s8 }}>
+                <input class="square" name="s9" type="text" maxlength="1"  readonly value={{ s9 }}>    
+
+            </div>
+
+            <div class="row">
+
+                <input class="square" name="s10" type="text" maxlength="1" readonly value={{ s10 }}>
+                <input class="square" name="s11" type="text" maxlength="1" readonly value={{ s11 }}>
+                <input class="square right" name="s12" type="text" maxlength="1" readonly value={{ s12 }}>
+                <input class="square" name="s13" type="text" maxlength="1" readonly value={{ s13 }}>
+                <input class="square" name="s14" type="text" maxlength="1" readonly value={{ s14 }}>
+                <input class="square right" name="s15" type="text" maxlength="1" readonly value={{ s15 }}>
+                <input class="square" name="s16" type="text" maxlength="1" readonly value={{ s16 }}>
+                <input class="square" name="s17" type="text" maxlength="1" readonly value={{ s17 }}>
+                <input class="square" name="s18" type="text" maxlength="1" readonly value={{ s18 }}>
+
+            </div>
+
+            <div class="row">
+
+                <input class="square bottom" name="s19" type="text" maxlength="1" readonly value={{ s19 }}>
+                <input class="square bottom" name="s20" type="text" maxlength="1" readonly value={{ s20 }}>
+                <input class="square bottom right" name="s21" type="text" maxlength="1" readonly value={{ s21 }}>
+                <input class="square bottom" name="s22" type="text" maxlength="1" readonly value={{ s22 }}>
+                <input class="square bottom" name="s23" type="text" maxlength="1" readonly value={{ s23 }}>
+                <input class="square bottom right" name="s24" type="text" maxlength="1" readonly value={{ s24 }}>
+                <input class="square bottom" name="s25" type="text" maxlength="1 readonly value={{ s25 }}">
+                <input class="square bottom" name="s26" type="text" maxlength="1" readonly value={{ s26 }}>
+                <input class="square bottom" name="s27" type="text" maxlength="1" readonly value={{ s27 }}>
+
+            </div>
+
+            <div class="row">
+
+                    <input class="square" name="s28" type="text" maxlength="1" readonly value={{ s28 }}>
+                    <input class="square" name="s29" type="text" maxlength="1" readonly value={{ s29 }}>
+                    <input class="square right" name="s30" type="text" maxlength="1" readonly value={{ s30 }}>
+                    <input class="square" name="s31" type="text" maxlength="1" readonly value={{ s31 }}>
+                    <input class="square" name="s32" type="text" maxlength="1" readonly value={{ s32 }}>
+                    <input class="square right" name="s33" type="text" maxlength="1" readonly value={{ s33 }}>
+                    <input class="square" name="s34" type="text" maxlength="1" readonly value={{ s34 }}>
+                    <input class="square" name="s35" type="text" maxlength="1" readonly value={{ s35 }}>
+                    <input class="square" name="s36" type="text" maxlength="1" readonly value={{ s36 }}>
+
+            </div>
+
+            <div class="row">
+                
+                    <input class="square" name="s37" type="text" maxlength="1" readonly value={{ s37 }}>
+                    <input class="square" name="s38" type="text" maxlength="1" readonly value={{ s38 }}>
+                    <input class="square right" name="s39" type="text" maxlength="1" readonly value={{ s39 }}>
+                    <input class="square" name="s40" type="text" maxlength="1" readonly value={{ s40 }}>
+                    <input class="square" name="s41" type="text" maxlength="1" readonly value={{ s41 }}>
+                    <input class="square right" name="s42" type="text" maxlength="1" readonly value={{ s42 }}>
+                    <input class="square" name="s43" type="text" maxlength="1" readonly value={{ s43 }}>
+                    <input class="square" name="s44" type="text" maxlength="1" readonly value={{ s44 }}>
+                    <input class="square" name="s45" type="text" maxlength="1" readonly value={{ s45 }}>
+                
+            </div>
+
+            <div class="row">
+                
+                    <input class="square bottom" name="s46" type="text" maxlength="1" readonly value={{ s46 }}>
+                    <input class="square bottom" name="s47" type="text" maxlength="1" readonly value={{ s47 }}>
+                    <input class="square bottom right" name="s48" type="text" maxlength="1" readonly value={{ s48 }}>
+                    <input class="square bottom" name="s49" type="text" maxlength="1" readonly value={{ s49 }}>
+                    <input class="square bottom" name="s50" type="text" maxlength="1" readonly value={{ s50 }}>
+                    <input class="square bottom right" name="s51" type="text" maxlength="1" readonly value={{ s51 }}>
+                    <input class="square bottom" name="s52" type="text" maxlength="1" readonly value={{ s52 }}>
+                    <input class="square bottom" name="s53" type="text" maxlength="1" readonly value={{ s53 }}>
+                    <input class="square bottom" name="s54" type="text" maxlength="1" readonly value={{ s54 }}>
+                
+            </div>
+
+            <div class="row">
+
+                <input class="square" name="s55" type="text" maxlength="1" readonly value={{ s55 }}>
+                <input class="square" name="s56" type="text" maxlength="1" readonly value={{ s56 }}>
+                <input class="square right" name="s57" type="text" maxlength="1" readonly value={{ s57 }}>
+                <input class="square" name="s58" type="text" maxlength="1" readonly value={{ s58 }}>
+                <input class="square" name="s59" type="text" maxlength="1" readonly value={{ s59 }}>
+                <input class="square right" name="s60" type="text" maxlength="1" readonly value={{ s60 }}>
+                <input class="square" name="s61" type="text" maxlength="1" readonly value={{ s61 }}>
+                <input class="square" name="s62" type="text" maxlength="1" readonly value={{ s62 }}>
+                <input class="square" name="s63" type="text" maxlength="1" readonly value={{ s63 }}>
+
+            </div>
+
+            <div class="row">
+                
+                <input class="square" name="s64" type="text" maxlength="1" readonly value={{ s64 }}>
+                <input class="square" name="s65" type="text" maxlength="1" readonly value={{ s65 }}>
+                <input class="square right" name="s66" type="text" maxlength="1" readonly value={{ s66 }}>
+                <input class="square" name="s67" type="text" maxlength="1" readonly value={{ s67 }}>
+                <input class="square" name="s68" type="text" maxlength="1" readonly value={{ s68 }}>
+                <input class="square right" name="s69" type="text" maxlength="1" readonly value={{ s69 }}>
+                <input class="square" name="s70" type="text" maxlength="1" readonly value={{ s70 }}>
+                <input class="square" name="s71" type="text" maxlength="1" readonly value={{ s71 }}>
+                <input class="square" name="s72" type="text" maxlength="1" readonly value={{ s72 }}>
+
+            </div>  
+
+            <div class="row">
+
+                <input class="square bottom" name="s73" type="text" maxlength="1" readonly value={{ s73 }}>
+                <input class="square bottom" name="s74" type="text" maxlength="1" readonly value={{ s74 }}>
+                <input class="square bottom right" name="s75" type="text" maxlength="1" readonly value={{ s75 }}>
+                <input class="square bottom" name="s76" type="text" maxlength="1" readonly value={{ s76 }}>
+                <input class="square bottom" name="s77" type="text" maxlength="1" readonly value={{ s77 }}>
+                <input class="square bottom right" name="s78" type="text" maxlength="1" readonly value={{ s78 }}>
+                <input class="square bottom" name="s79" type="text" maxlength="1" readonly value={{ s79 }}>
+                <input class="square bottom" name="s80" type="text" maxlength="1" readonly value={{ s80 }}>
+                <input class="square bottom" name="s81" type="text" maxlength="1" readonly value={{ s81 }}>
+            
+            </div>
+            
+
+    </div>
+    
+        
+    <button type="submit" class="solve">Solve!</button>
+</form>
+{% endblock %}
