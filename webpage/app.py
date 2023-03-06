@@ -16,6 +16,9 @@ def index():
                 "s55", "s56", "s57", "s58", "s59", "s60", "s61", "s62", "s63"
                 "s64", "s65", "s66", "s67", "s68", "s69", "s70", "s71", "s72"
                 "s73", "s74", "s75", "s76", "s77", "s78", "s79", "s80", "s81"]
+        for square in board:
+            square = request.form.get(square)
+            
 
     return render_template("index.html")
 

@@ -15,6 +15,12 @@ class Sudoku:
     def __str__(self):
         _printBoard = np.matrix(self._board)
         return f"{_printBoard}"
+    
+    def setSquare(self, row, col, value):
+        if value >= 0 and value < 10:
+            self._board[row][col] = value
+        else:
+            print("Value needs to be within 0 and 9")
 
     
     #generating a new sudoku puzzle is extremely long using my current algo. i will abandon this for now... need more efficient algo..

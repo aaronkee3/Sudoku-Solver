@@ -29,26 +29,38 @@ footer{
 .content{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#sudoku-container{
-    display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.box-row{
 
-}
 
-.box-col{
-
-}
 
 
 
 .square{
-    font-size: 40px;
-    width: 40px;
+    font-size: 30px;
+    width: 30px;
+    margin: 2px;    
+    border: 1px;
+    padding: 0px;
+    border-color: black;
+    border-style: solid;
     text-align: center;
+}
+
+.right{
+    margin-right: 6px;
+}
+
+.top{
+    margin-top: 6px;
+}
+
+.bottom{
+    margin-bottom: 6px;
+}
+
+.left{
+    margin-left: 5px;
 }
