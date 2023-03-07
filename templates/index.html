@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+<form class="content" name="submit" action="/solveSudoku" method="POST">
+    <div id="sudoku-container">
+    
+
+            <div class="row">
+
+                <input class="square" name="s1" type="text" maxlength="1">
+                <input class="square" name="s2" type="text" maxlength="1">
+                <input class="square right" name="s3" type="text" maxlength="1">
+                <input class="square" name="s4" type="text" maxlength="1">
+                <input class="square" name="s5" type="text" maxlength="1">
+                <input class="square right" name="s6" type="text" maxlength="1">
+                <input class="square" name="s7" type="text" maxlength="1">
+                <input class="square" name="s8" type="text" maxlength="1">
+                <input class="square" name="s9" type="text" maxlength="1">    
+
+            </div>
+
+            <div class="row">
+
+                <input class="square" name="s10" type="text" maxlength="1">
+                <input class="square" name="s11" type="text" maxlength="1">
+                <input class="square right" name="s12" type="text" maxlength="1">
+                <input class="square" name="s13" type="text" maxlength="1">
+                <input class="square" name="s14" type="text" maxlength="1">
+                <input class="square right" name="s15" type="text" maxlength="1">
+                <input class="square" name="s16" type="text" maxlength="1">
+                <input class="square" name="s17" type="text" maxlength="1">
+                <input class="square" name="s18" type="text" maxlength="1">
+
+            </div>
+
+            <div class="row">
+
+                <input class="square bottom" name="s19" type="text" maxlength="1">
+                <input class="square bottom" name="s20" type="text" maxlength="1">
+                <input class="square bottom right" name="s21" type="text" maxlength="1">
+                <input class="square bottom" name="s22" type="text" maxlength="1">
+                <input class="square bottom" name="s23" type="text" maxlength="1">
+                <input class="square bottom right" name="s24" type="text" maxlength="1">
+                <input class="square bottom" name="s25" type="text" maxlength="1">
+                <input class="square bottom" name="s26" type="text" maxlength="1">
+                <input class="square bottom" name="s27" type="text" maxlength="1">
+
+            </div>
+
+            <div class="row">
+
+                    <input class="square" name="s28" type="text" maxlength="1">
+                    <input class="square" name="s29" type="text" maxlength="1">
+                    <input class="square right" name="s30" type="text" maxlength="1">
+                    <input class="square" name="s31" type="text" maxlength="1">
+                    <input class="square" name="s32" type="text" maxlength="1">
+                    <input class="square right" name="s33" type="text" maxlength="1">
+                    <input class="square" name="s34" type="text" maxlength="1">
+                    <input class="square" name="s35" type="text" maxlength="1">
+                    <input class="square" name="s36" type="text" maxlength="1">
+
+            </div>
+
+            <div class="row">
+                
+                    <input class="square" name="s37" type="text" maxlength="1">
+                    <input class="square" name="s38" type="text" maxlength="1">
+                    <input class="square right" name="s39" type="text" maxlength="1">
+                    <input class="square" name="s40" type="text" maxlength="1">
+                    <input class="square" name="s41" type="text" maxlength="1">
+                    <input class="square right" name="s42" type="text" maxlength="1">
+                    <input class="square" name="s43" type="text" maxlength="1">
+                    <input class="square" name="s44" type="text" maxlength="1">
+                    <input class="square" name="s45" type="text" maxlength="1">
+                
+            </div>
+
+            <div class="row">
+                
+                    <input class="square bottom" name="s46" type="text" maxlength="1">
+                    <input class="square bottom" name="s47" type="text" maxlength="1">
+                    <input class="square bottom right" name="s48" type="text" maxlength="1">
+                    <input class="square bottom" name="s49" type="text" maxlength="1">
+                    <input class="square bottom" name="s50" type="text" maxlength="1">
+                    <input class="square bottom right" name="s51" type="text" maxlength="1">
+                    <input class="square bottom" name="s52" type="text" maxlength="1">
+                    <input class="square bottom" name="s53" type="text" maxlength="1">
+                    <input class="square bottom" name="s54" type="text" maxlength="1">
+                
+            </div>
+
+            <div class="row">
+
+                <input class="square" name="s55" type="text" maxlength="1">
+                <input class="square" name="s56" type="text" maxlength="1">
+                <input class="square right" name="s57" type="text" maxlength="1">
+                <input class="square" name="s58" type="text" maxlength="1">
+                <input class="square" name="s59" type="text" maxlength="1">
+                <input class="square right" name="s60" type="text" maxlength="1">
+                <input class="square" name="s61" type="text" maxlength="1">
+                <input class="square" name="s62" type="text" maxlength="1">
+                <input class="square" name="s63" type="text" maxlength="1">
+
+            </div>
+
+            <div class="row">
+                
+                <input class="square" name="s64" type="text" maxlength="1">
+                <input class="square" name="s65" type="text" maxlength="1">
+                <input class="square right" name="s66" type="text" maxlength="1">
+                <input class="square" name="s67" type="text" maxlength="1">
+                <input class="square" name="s68" type="text" maxlength="1">
+                <input class="square right" name="s69" type="text" maxlength="1">
+                <input class="square" name="s70" type="text" maxlength="1">
+                <input class="square" name="s71" type="text" maxlength="1">
+                <input class="square" name="s72" type="text" maxlength="1">
+
+            </div>  
+
+            <div class="row">
+
+                <input class="square bottom" name="s73" type="text" maxlength="1">
+                <input class="square bottom" name="s74" type="text" maxlength="1">
+                <input class="square bottom right" name="s75" type="text" maxlength="1">
+                <input class="square bottom" name="s76" type="text" maxlength="1">
+                <input class="square bottom" name="s77" type="text" maxlength="1">
+                <input class="square bottom right" name="s78" type="text" maxlength="1">
+                <input class="square bottom" name="s79" type="text" maxlength="1">
+                <input class="square bottom" name="s80" type="text" maxlength="1">
+                <input class="square bottom" name="s81" type="text" maxlength="1">
+            
+            </div>
+            
+
+    </div>
+    
+        
+    <button type="submit" class="solve">Solve!</button>
+</form>
+{% endblock %}

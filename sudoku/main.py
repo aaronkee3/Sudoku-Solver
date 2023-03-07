@@ -11,5 +11,6 @@ board = [[0, 5, 0, 3, 0, 0, 0, 2, 1],
         [3, 1, 9, 2, 0, 5, 0, 0, 0]]
 
 game = Sudoku(board)
-game.newBoard()
-print(game)
+game.solve(copy=True)
+print(game._solved)
+#print(game)

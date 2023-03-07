@@ -6,7 +6,7 @@ class Sudoku:
     def __init__(self, board=None):
         #initiates a 9x9 board
         self._board = [[0 for i in range(9)] for i in range(9)]
-        self._solved = [[0 for i in range(9)] for i in range(9)]
+        self._solvedBoard = [[0 for i in range(9)] for i in range(9)]
         if board != None:
             for i in range(9):
                 for j in range(9):
@@ -15,6 +15,18 @@ class Sudoku:
     def __str__(self):
         _printBoard = np.matrix(self._board)
         return f"{_printBoard}"
+    
+    def board(self):
+        return self._board
+    
+    def solvedBoard(self):
+        return self._solvedBoard
+    
+    def setSquare(self, row, col, value):
+        if value >= 0 and value < 10:
+            self._board[row][col] = value
+        else:
+            print("Value needs to be within 0 and 9")
 
     
     #generating a new sudoku puzzle is extremely long using my current algo. i will abandon this for now... need more efficient algo..
@@ -26,7 +38,7 @@ class Sudoku:
             self.insertNumber(number)
 
         self.solve()
-        self.copyBoard(self._solved, self._board)
+        self.copyBoard(self._solvedBoard, self._board)
         #backtrack algo
 
     #To insert a number(1-9) into board
@@ -119,7 +131,7 @@ class Sudoku:
         count = 0
         for row in range(9):
             for col in range(9):
-                print(self)
+                #print(self)
                 if self._board[row][col] == 0:
                     for number in range(1,10):
                         if self.isValid(number, row, col):
@@ -130,8 +142,8 @@ class Sudoku:
                 else:
                     count += 1
         if count == 81:
-            self.copyBoard(self._board, self._solved)
-            print(self)
+            self.copyBoard(self._board, self._solvedBoard)
+            
                     
                     
     

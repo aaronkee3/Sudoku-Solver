@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+<form class="content" name="submit" action="/solveSudoku" method="POST">
+    <div id="sudoku-container">
+    
+
+            <div class="row">
+
+                {% for i in range(2) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[0][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[0][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[0][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[0][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[0][i] }}>
+                {% endfor %}
+            </div>
+
+            <div class="row">
+
+                {% for i in range(2) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[1][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[1][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[1][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[1][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[1][i] }}>
+                {% endfor %}
+
+            </div>
+
+            <div class="row">
+
+                {% for i in range(2) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[2][i] }}>
+                {% endfor %}
+                <input class="square bottom right" name="s1" type="text" maxlength="1" readonly value={{ board[2][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[2][i] }}>
+                {% endfor %}
+                <input class="square bottom right" name="s1" type="text" maxlength="1" readonly value={{ board[2][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[2][i] }}>
+                {% endfor %}
+
+            </div>
+
+            <div class="row">
+
+                {% for i in range(2) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[3][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[3][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[3][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[3][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[3][i] }}>
+                {% endfor %}
+
+            </div>
+
+            <div class="row">
+                
+                {% for i in range(2) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[4][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[4][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[4][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[4][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[4][i] }}>
+                {% endfor %}
+                
+            </div>
+
+            <div class="row">
+                
+                {% for i in range(2) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[5][i] }}>
+                {% endfor %}
+                <input class="square bottom right" name="s1" type="text" maxlength="1" readonly value={{ board[5][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[5][i] }}>
+                {% endfor %}
+                <input class="square bottom right" name="s1" type="text" maxlength="1" readonly value={{ board[5][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[5][i] }}>
+                {% endfor %}
+                
+            </div>
+
+            <div class="row">
+
+                {% for i in range(2) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[6][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[6][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[6][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[6][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[6][i] }}>
+                {% endfor %}
+
+            </div>
+
+            <div class="row">
+                
+                {% for i in range(2) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[7][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[7][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[7][i] }}>
+                {% endfor %}
+                <input class="square right" name="s1" type="text" maxlength="1" readonly value={{ board[7][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square" name="s1" type="text" maxlength="1" readonly value={{ board[7][i] }}>
+                {% endfor %}
+
+            </div>  
+
+            <div class="row">
+
+                {% for i in range(2) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[8][i] }}>
+                {% endfor %}
+                <input class="square bottom right" name="s1" type="text" maxlength="1" readonly value={{ board[8][2] }}>
+                {% for i in range(3, 5) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[8][i] }}>
+                {% endfor %}
+                <input class="square bottom right" name="s1" type="text" maxlength="1" readonly value={{ board[8][5] }}>
+                {% for i in range(6, 9) %}
+                <input class="square bottom" name="s1" type="text" maxlength="1" readonly value={{ board[8][i] }}>
+                {% endfor %}
+            
+            </div>
+            
+
+    </div>
+    
+        
+    <button type="submit" class="solve">Solve!</button>
+</form>
+{% endblock %}
